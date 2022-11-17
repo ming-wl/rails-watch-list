@@ -1,0 +1,6 @@
+<h1 class="ms-3"><%= @list.name %></h1>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.comment %>
+<% end %>
+<button type="button" class="btn btn-primary"><%= link_to "Back to Movies", lists_path, class: "text-dark text-decoration-none" %></button>
