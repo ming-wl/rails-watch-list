@@ -1,10 +1,10 @@
 <h1 class="ms-3"><%= @list.name %></h1>
 
-<ul>
+<ul class="mb-4">
   <% @list.bookmarks.each do |bookmark| %>
     <li><%= bookmark.comment %></li>
-    <button type="button" class="btn btn-warning"><%= link_to "Delete bookmark", bookmark_path(bookmark), class: "text-dark text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
- %></button>
+    <%= cl_image_tag bookmark.photo.key, height: 400, width: 400, crop: :fit %>
+    <button type="button" class="btn btn-warning"><%= link_to "Delete bookmark", bookmark_path(bookmark), class: "text-dark text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
   <% end %>
 </ul>
 <button type="button" class="btn btn-primary"><%= link_to "Back to Movies", lists_path, class: "text-dark text-decoration-none" %></button>

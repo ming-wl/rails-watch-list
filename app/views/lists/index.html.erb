@@ -1,9 +1,11 @@
 <div class="d-block p-2">
   <h1 class="text-center">List</h1>
-  <div class="p-2">
+  <div class="p-2 mb-4">
     <ul><% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list), class: "text-dark text-decoration-none" %></li>
-      <button type="button" class="btn btn-primary"><%= link_to "Create a bookmark", new_list_bookmark_path(list), class: "text-dark text-decoration-none" %></button>
+      <div class="mb-4">
+        <li><%= link_to list.name, list_path(list), class: "text-dark text-decoration-none" %></li>
+        <button type="button" class="btn btn-primary"><%= link_to "Create a bookmark", new_list_bookmark_path(list), class: "text-dark text-decoration-none" %></button>
+      </div>
     <% end %>
     </ul>
   </div>
